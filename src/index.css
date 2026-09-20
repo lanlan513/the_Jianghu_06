@@ -178,3 +178,83 @@ body {
   opacity: 0.3;
   transition: 0s;
 }
+
+/* ---------- 名剑论剑 ---------- */
+
+/* 最优值金色脉冲（缩放型，适用于徽记 / SVG 圆点） */
+@keyframes goldPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.55;
+  }
+}
+
+.gold-pulse {
+  animation: goldPulse 1.5s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* 最优值金色脉冲（光晕型，适用于条形） */
+@keyframes goldGlowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 4px rgba(212, 175, 55, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.95);
+  }
+}
+
+.gold-glow {
+  animation: goldGlowPulse 1.5s ease-in-out infinite;
+}
+
+/* 视图切换水墨过渡：墨团晕开后消散 */
+@keyframes inkWipeBlob {
+  0% {
+    transform: scale(0);
+    opacity: 0.9;
+  }
+  55% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.ink-wipe-blob {
+  animation: inkWipeBlob 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+/* 新视图入场 */
+@keyframes compareViewIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-compare-view-in {
+  animation: compareViewIn 0.55s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gold-pulse,
+  .gold-glow,
+  .ink-wipe-blob,
+  .animate-compare-view-in {
+    animation: none !important;
+  }
+}

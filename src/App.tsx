@@ -6,6 +6,7 @@ import SwordList from "@/pages/SwordList";
 import SwordDetail from "@/pages/SwordDetail";
 import SwordsmanList from "@/pages/SwordsmanList";
 import SectList from "@/pages/SectList";
+import Compare from "@/pages/Compare";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/swords" element={<SwordList />} />
             <Route path="/swords/:id" element={<SwordDetail />} />
+            <Route path="/compare" element={<Compare />} />
             <Route path="/swordsmen" element={<SwordsmanList />} />
             <Route path="/sects" element={<SectList />} />
           </Routes>
