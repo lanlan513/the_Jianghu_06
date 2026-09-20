@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from 'react';
-import { Search, Filter, SortDesc, X, ChevronLeft, ChevronRight, Sword } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Search, Filter, SortDesc, X, ChevronLeft, ChevronRight, Sword, Swords } from 'lucide-react';
 import { swordApi } from '../api';
 import type { Sword as SwordType, SwordFilterParams } from '../types';
 import SwordCard from '../components/sword/SwordCard';
@@ -146,6 +147,13 @@ export default function SwordList() {
           </div>
           
           <div className="flex gap-2">
+            <Link
+              to="/compare"
+              className="flex items-center gap-2 px-6 py-3 bg-ink-50 border-2 border-ink-200 hover:border-gold-500 font-song transition-colors"
+            >
+              <Swords className="w-5 h-5" />
+              论剑
+            </Link>
             <button
               onClick={() => setShowFilters(!showFilters)}
               className={cn(

@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import Home from "@/pages/Home";
 import SwordList from "@/pages/SwordList";
 import SwordDetail from "@/pages/SwordDetail";
+import SwordCompare from "@/pages/SwordCompare";
 import SwordsmanList from "@/pages/SwordsmanList";
 import SectList from "@/pages/SectList";
 
@@ -17,6 +18,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/swords" element={<SwordList />} />
             <Route path="/swords/:id" element={<SwordDetail />} />
+            <Route path="/compare" element={<SwordCompare />} />
             <Route path="/swordsmen" element={<SwordsmanList />} />
             <Route path="/sects" element={<SectList />} />
           </Routes>
